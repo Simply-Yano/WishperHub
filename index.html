@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/logo.svg">
+    <title>WishperHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Trigger for Popup -->
+        <input type="text" class="noteinput" id="noteInput" placeholder="Write what's on your mind..." onclick="openPopup()">
+        <!-- Notes Display -->
+        <div id="notesContainer">
+        </div>
+    </div>
+    <!-- Popup Overlay -->
+    <div id="popupOverlay" class="popup-overlay hidden">
+        <div class="popup">
+            <!-- Container for Textarea and Word Count -->
+            <div class="textarea-container">
+                <input type="text" class="username" id="userName" placeholder="Your Name...">
+                <textarea id="popupInput" rows="4" placeholder="What's on your mind..." oninput="updateWordCount()"></textarea>
+                <div class="word-count-overlay" id="wordCount">0/100</div>
+            </div>
+            <button id="addNoteButton" onclick="addNote()">Add Note</button>
+            <button onclick="closePopup()">Close</button>
+        </div>        
+    </div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J934GE5B6S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-J934GE5B6S');
+            // Define dataLayer and the gtag function.
+            window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        // IMPORTANT - DO NOT COPY/PASTE WITHOUT MODIFYING REGION LIST
+        // Set default consent for specific regions according to your requirements
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied',
+         'regions':['AU-NSW','NZ-AUK']
+        });
+        // Set default consent for all other regions according to your requirements
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        });
+        <!--Banner script here!--> 
+    </script>
+    <script src="server.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
